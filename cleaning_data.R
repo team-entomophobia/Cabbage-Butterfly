@@ -54,7 +54,7 @@ df1 <- df %>%
 
 #sort
 df_butterfly <- df1 %>%
-  arrange(sex, year, country)
+  arrange(sex, country, year)
 
 #export to csv
 write.csv(df_butterfly, 
