@@ -60,3 +60,4 @@ df_butterfly <- df1 %>%
 write.csv(df_butterfly, 
           "/Users/baodinhgiatran/Desktop/DATA 332/cabbage_butterfly-main/clean_data.csv", 
           row.names = FALSE)
+xx
