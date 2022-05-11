@@ -41,13 +41,14 @@ df$YearUpdated <- as.numeric(df$YearUpdated)
 
 #return result
 df <- df %>%
-  dplyr::rename("country" = "dwc:country", 
-                "year" = "YearUpdated",
-                "sex" = "SexUpdated") %>%
-  dplyr::select("coreid", "sex", "LWingLength", "LWingWidth",
+  dplyr::rename("Country" = "dwc:country", 
+                "Year" = "YearUpdated",
+                "Sex" = "SexUpdated",
+                "Core ID" = "coreid") %>%
+  dplyr::select("coreid", "Sex", "LWingLength", "LWingWidth",
                 "LBlackPatchApex", "LAnteriorSpotM3", "LPosteriorSpotCu2", 
                 "RWingLength", "RWingWidth", "RBlackPatchApex","RAnteriorSpotM3", 
-                "RPosteriorSpotCu2","year", "country")
+                "RPosteriorSpotCu2","Year", "Country")
 #remove NA
 df1 <- df %>%
   drop_na()
