@@ -3,24 +3,26 @@ library(dplyr)
 library(readxl)
 library(lubridate)
 
-#set up directory
+#set up working directory and the raw file
 rm(list = ls())
-setwd("H:/Cabbage-Butterfly")
-df <- read_excel("data/CompletePierisData_2022-03-09.xlsx")
+setwd("/Users/baodinhgiatran/Desktop/DATA 332/cabbage_butterfly-main")
+df <- read_excel("data/CompletePierisData_2022-03-09.xlsx") 
 
-#remove duplicates
 df %>%
   dplyr::distinct(coreid)
 
 #clean sex column
-df$SexUpdated <- gsub("(?i)Female|(?i)F", "female",df$SexUpdated)
-df$SexUpdated <- gsub("(?i)Male|(?i)M", "male",df$SexUpdated)
-df$SexUpdated[df$SexUpdated == "female?"] <- "female"
-df$SexUpdated[df$SexUpdated =="male?"] <- "male"
+df$SexUpdated[df$SexUpdated == "Female"] <- "female"
+df$SexUpdated[df$SexUpdated == "F"] <- "female"
+df$SexUpdated[df$SexUpdated == "Male"] <- "male"
+df$SexUpdated[df$SexUpdated == "M"] <- "male"
+df$SexUpdated[df$SexUpdated == "female?"] <- "unknown"
+df$SexUpdated[df$SexUpdated =="male?"] <- "unknown"
 df$SexUpdated[is.na(df$SexUpdated)] <- "unknown"
 
+
 #clean country column
-df$`dwc:country`<- gsub("(?i)United States|(?i)U.S.A.", "USA", df$`dwc:country`)
+df$`dwc:country`<- gsub("(?i)USA|(?i)U.S.A.", "United States", df$`dwc:country`)
 df$`dwc:country`[is.na(df$`dwc:country`)] <- "unknown"
 
 #clean year column
@@ -39,25 +41,24 @@ df$RAnteriorSpotM3 <- round(as.numeric(df$RAnteriorSpotM3), digits = 3)
 df$RPosteriorSpotCu2 <- round(as.numeric(df$RPosteriorSpotCu2), digits = 3)
 df$YearUpdated <- as.numeric(df$YearUpdated)
 
+
+
 #return result
-df <- df %>%
-  dplyr::rename("Country" = "dwc:country", 
-                "Year" = "YearUpdated",
-                "Sex" = "SexUpdated",
-                "Core ID" = "coreid") %>%
-  dplyr::select("coreid", "Sex", "LWingLength", "LWingWidth",
+df1 <- df %>%
+  dplyr::rename("country" = "dwc:country", 
+                "year" = "YearUpdated",
+                "sex" = "SexUpdated") %>%
+  dplyr::select("coreid", "sex", "LWingLength", "LWingWidth",
                 "LBlackPatchApex", "LAnteriorSpotM3", "LPosteriorSpotCu2", 
                 "RWingLength", "RWingWidth", "RBlackPatchApex","RAnteriorSpotM3", 
-                "RPosteriorSpotCu2","Year", "Country")
-#remove NA
-df1 <- df %>%
+                "RPosteriorSpotCu2","year", "country")
+
+
+df2 <-subset(df1, sex != "unknown" & country != "unknown")
+df2 <- df2 %>%
   drop_na()
 
-#sort
-df_butterfly <- df1 %>%
-  arrange(sex, country, year)
+df_butterfly <- df2 %>%
+  arrange(sex, year, country)
 
-#export to csv
-write.csv(df_butterfly, 
-          "/Users/baodinhgiatran/Desktop/DATA 332/cabbage_butterfly-main/clean_data.csv", 
-          row.names = FALSE)
+write.csv(df_butterfly, "/Users/baodinhgiatran/Desktop/DATA 332/cabbage_butterfly-main/testing.csv", row.names = FALSE)
