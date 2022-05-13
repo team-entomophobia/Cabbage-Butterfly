@@ -18,5 +18,6 @@ df_europe <- df_wing_size %>%
 df_america <- df_wing_size %>%
   dplyr::filter(country == "United States" | country == "Canada")
 
+#Computing t-test on both wings by Continent
 t.test(df_europe$leftArea, df_america$leftArea, alternative = "less", var.equal = FALSE)
 t.test(df_europe$rightArea, df_america$rightArea, alternative = "less", var.equal = FALSE)
