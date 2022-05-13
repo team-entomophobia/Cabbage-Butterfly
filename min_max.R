@@ -6,8 +6,8 @@ library(reshape)
 
 #set up working directory and the raw file
 rm(list = ls())
-setwd("/Users/baodinhgiatran/Desktop/DATA 332/cabbage_butterfly-main")
-df <- read.csv("testing.csv") 
+setwd("H:/Cabbage-Butterfly")
+df <- read.csv("data/clean_data.csv")
 
 df1 <- df %>%
   group_by(sex) %>%
