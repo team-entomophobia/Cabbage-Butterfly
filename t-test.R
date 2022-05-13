@@ -27,3 +27,13 @@ df_country_pivot <- df_country %>%
 #t-test performed
 t.test(df_country_pivot$number) #t-test by country  
 t.test(df_male_female_pivot$number) #t-test by gender
+
+
+
+df_europe <- df %>%
+  dplyr::filter(countr == "United Kingdom" | country == "Republic of Ireland")
+
+df_america <- df %>%
+  dplyr::filter(country == "United States" | country == "Canada")
+
+t.test(df_europe$LwingLength, df_america$LWingLength, var.equal = FALSE)
