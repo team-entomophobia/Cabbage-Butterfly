@@ -16,9 +16,6 @@ df_male_female_pivot <- df_male_female %>%
   dplyr::group_by(sex) %>%
   dplyr::summarise(number = n())
 
-#t-test performed  
-t.test(df_male_female_pivot$number, mu=20)
-
 #Location
 df_country <- df %>%
   dplyr::select("country", "LWingLength", "LWingWidth", "RWingLength", "RWingWidth")
@@ -29,4 +26,5 @@ df_country_pivot <- df_country %>%
   dplyr::summarise(number = n())
 
 #t-test performed
-t.test(df_country_pivot$number, mu = 30)
+t.test(df_country_pivot$number) #t-test by country  
+t.test(df_male_female_pivot$number) #t-test by gender
