@@ -1,7 +1,6 @@
 library(tidyverse)
 library(dplyr)
 library(readxl)
-library(lubridate)
 
 rm(list = ls())
 setwd("/Users/chloefausett/Library/Mobile Documents/com~apple~CloudDocs/Documents/DATA 332/cabbage_butterfly-main")
