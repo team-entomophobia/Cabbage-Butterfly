@@ -10,6 +10,10 @@ rm(list = ls())
 setwd("H:/Cabbage-Butterfly")
 df <- read.csv("data/clean_data.csv")
 
+df <- df %>%
+  dplyr::select("coreid", "sex", 
+                "LWingLength", "LWingWidth","RWingLength", "RWingWidth")
+
 #plot left wing length
 df1 <- df %>%
   group_by(sex) %>%
@@ -18,39 +22,36 @@ df1 <- df %>%
             median.LWingLength = median(LWingLength),
             max.LWingLength = max(LWingLength))
 
-df1 <- pivot_longer(df1, cols = 2:5, names_to = "functions", values_to = "value")
+df1 <- pivot_longer(df1, cols = 2:5, names_to = "functions", values_to = "measurement")
 
-a <- ggplot(df1, aes(fill = functions, x = sex, y = value)) +
-  geom_bar(position = "dodge", stat = "identity") +
-  ggtitle("Left Wing Length")
+a <- ggplot(df1, aes(fill = functions, x = sex, y = measurement)) +
+  geom_bar(position = "dodge", stat = "identity") + theme_minimal()
 
 #plot left wing width
-df3 <- df %>%
+df2 <- df %>%
   group_by(sex) %>%
   summarise(min.LWingWidth = min(LWingWidth),
             mean.LWingWidth = mean(LWingWidth),
             median.LWingWidth = median(LWingWidth),
             max.LWingWidth = max(LWingWidth))
 
-df3 <- pivot_longer(df3, cols = 2:5, names_to = "functions", values_to = "value")
+df2 <- pivot_longer(df2, cols = 2:5, names_to = "functions", values_to = "measurement")
 
-c <- ggplot(df1, aes(fill = functions, x = sex, y = value)) +
-  geom_bar(position = "dodge", stat = "identity")+
-  ggtitle("Left Wing Width")
+b <- ggplot(df2, aes(fill = functions, x = sex, y = measurement)) +
+  geom_bar(position = "dodge", stat = "identity")+ theme_minimal()
 
 #plot right wing length
-df2 <- df %>%
+df3 <- df %>%
   group_by(sex) %>%
   summarise(min.RWingLength = min(RWingLength),
             mean.RWingLength = mean(RWingLength),
             median.RWingLength = median(RWingLength),
             max.RWingLength = max(RWingLength))
 
-df2 <- pivot_longer(df2, cols = 2:5, names_to = "functions", values_to = "value")
+df3 <- pivot_longer(df3, cols = 2:5, names_to = "functions", values_to = "measurement")
 
-b <- ggplot(df2, aes(fill = functions, x = sex, y = value)) +
-  geom_bar(position = "dodge", stat = "identity") +
-  ggtitle("Right Wing Length")
+c <- ggplot(df3, aes(fill = functions, x = sex, y = measurement)) +
+  geom_bar(position = "dodge", stat = "identity") +theme_minimal()
 
 #plot right wing width
 df4 <- df %>%
@@ -60,10 +61,12 @@ df4 <- df %>%
             median.RWingWidth = median(RWingWidth),
             max.RWingWidth = max(RWingWidth))
 
-df4 <- pivot_longer(df4, cols = 2:5, names_to = "functions", values_to = "value")
+df4 <- pivot_longer(df4, cols = 2:5, names_to = "functions", values_to = "measurement")
 
-d <- ggplot(df4, aes(fill = functions, x = sex, y = value)) +
-  geom_bar(position = "dodge", stat = "identity")+ 
-  ggtitle("Right Wing Width")
+d <- ggplot(df4, aes(fill = functions, x = sex, y = measurement)) +
+  geom_bar(position = "dodge", stat = "identity")+ theme_minimal()
+
 #combine
-ggarrange(a, b, c, d, ncol = 2, nrow = 2)
+ggarrange(a, b, c, d, ncol = 2, nrow = 2, common.legend = TRUE, legend = "right",
+          labels = c("Left Wing Length", "Left Wing Width", 
+                     "Right Wing Length","Right Wing Width"))
