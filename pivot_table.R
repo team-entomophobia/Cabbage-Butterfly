@@ -7,12 +7,12 @@ setwd("H:/Cabbage-Butterfly")
 df <- read.csv("data/clean_data.csv")
 
 #Group years into decade
-df$Year <- substr(df$Year,1,3)
-df$Year <- paste(df$Year,sep='',"0's")
+df$year <- substr(df$year,1,3)
+df$year <- paste(df$year,sep='',"0's")
 
 #Pivot Table
 pt <- df %>%
-  dplyr::select("Year","Sex","Country") %>%
-  group_by(Country,Sex,Year) %>%
+  dplyr::select("year","sex","country") %>%
+  group_by(country,sex,year) %>%
   summarize(numRecord = n()) %>%
-  pivot_wider(names_from = Sex, values_from = numRecord) #covert the gender into 2 columns
+  pivot_wider(names_from = sex, values_from = numRecord) #covert the gender into 2 columns
