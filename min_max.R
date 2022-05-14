@@ -12,7 +12,8 @@ df <- read.csv("data/clean_data.csv")
 
 df <- df %>%
   dplyr::select("coreid", "sex", 
-                "LWingLength", "LWingWidth","RWingLength", "RWingWidth")
+                "LWingLength", "LWingWidth","RWingLength", "RWingWidth") %>%
+  dplyr::filter(LWingLength > 0, LWingWidth > 0, RWingLength > 0, RWingWidth >0)
 
 #plot left wing length
 df1 <- df %>%
@@ -97,4 +98,4 @@ figure <- ggarrange(a, c, b, d, ncol = 2, nrow = 2,
                      "Left Wing Width","Right Wing Width"),
           font.label = list(size = 14, color = "black", face = "plain"))
 
-annotate_figure(figure, top = text_grob("Wing Span Visualization", face = "bold", size = 20))
+annotate_figure(figure, top = text_grob("Wing Span Visualization by Sex", face = "bold", size = 20))
