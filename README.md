@@ -2,11 +2,19 @@
 We will analyze data of butterflies in this project <br>
 
 ## Dictionary:
-The columns that were used are coreid, sex, country, year, left-wing width, left-wing length, left-wing apex, left-wing posterior spot, and left-wing anterior spot, and the same labels were used for the right-wing as the left-wing. The coreid is a unique ID for each butterfly that was recorded. Sex is stating whether the butterfly is male or female. The country is where the butterfly is from. The year is when the butterfly was recorded. The left-wing/right-wing width is the width of the wings in millimeters. The left-wing/right-wing length is the length of the wings in millimeters. The left-wing/right-wing apex column is the measurement from the tip of the wing to the bottom of the wing in millimeters. The left-wing/right-wing posterior spot is saying that the spot is in the bottom wing area. It is the measurement of how far the spot is from the vein of the wing. The left-wing/right-wing anterior is saying the spot is in the top wing area. It measures how far the spot is from the vein of the wing. 
-
+The columns that were used are 
+1. coreid: a unique ID for each butterfly that was recorded
+2. sex: whether the butterfly is male or female 
+3. country: where the butterfly is from
+4. year: when the butterfly was recorded
+5. left-wing/right-wing width: the width of the wings in millimeters
+6. left-wing/right-wing length: the length of the wings in millimeters
+7. left-wing/right-wing apex: the measurement from the tip of the wing to the bottom of the wing in millimeters
+8. left-wing/right-wing posterior spot: the measurement of how far the spot in the bottom wing is from the vein of the wing
+9. left-wing/right-wing anterior spot how far the spot in the top wing area is from the vein of the wing. 
+---
 ## Data cleaning
-Cleaning process:
-    Gender:
+1. Gender:
         Male
         Female
         F
