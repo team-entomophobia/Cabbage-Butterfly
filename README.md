@@ -1,5 +1,13 @@
 # Cabbage-Butterfly
-We will analyze data of butterflies in this project <br>
+
+## Contributors
+1. Bao Tran
+2. Chloe Fausett
+3. Kiet Vu
+
+## Introduction
+We will analyze the measurement data of butterflies recorded in different countries to find relationships between the wingspan and location/sex. <br>
+![Cabbage butterfly](/chart_image/Screen Shot 2022-05-15 at 5.53.05 PM.png)
 
 ## Dictionary:
 The columns that were used are 
