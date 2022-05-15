@@ -7,8 +7,10 @@
 
 ## Introduction
 We will analyze the measurement data of butterflies recorded in different countries to find relationships between the wingspan and location/sex. <br>
-![Cabbage butterfly](/chart_image/Screen Shot 2022-05-15 at 5.53.05 PM.png)
-
+<div align = "center">
+<img src = "https://github.com/team-entomophobia/Cabbage-Butterfly/blob/26a03df000a8b9125e2a1a673f785fd75c282c55/chart_image/Screen%20Shot%202022-05-15%20at%205.53.05%20PM.png")>
+</div>
+        
 ## Dictionary:
 The columns that were used are 
 1. coreid: a unique ID for each butterfly that was recorded
