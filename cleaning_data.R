@@ -23,7 +23,7 @@ df$SexUpdated[is.na(df$SexUpdated)] <- "unknown"
 
 #clean country column
 df$`dwc:country`<- gsub("(?i)USA|(?i)U.S.A.", "United States", df$`dwc:country`)
-df$`dwc:country`[is.na(df$`dwc:country`)] <- "unknown"
+df$`dwc:country`[is.na(df$`dwc:country`)] <- "United Kingdom"
 
 #clean year column
 df$YearUpdated[is.na(df$YearUpdated)] <- df$`dwc:year`[is.na(df$YearUpdated)]
