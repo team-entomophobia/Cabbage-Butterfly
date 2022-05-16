@@ -20,6 +20,7 @@ The columns that were used are
 7. left-wing/right-wing apex: the measurement from the tip of the wing to the bottom of the wing in millimeters
 8. left-wing/right-wing posterior spot: the measurement of how far the spot in the bottom wing is from the vein of the wing
 9. left-wing/right-wing anterior spot how far the spot in the top wing area is from the vein of the wing. 
+
 ---
 ## Data cleaning
 1. Gender:
@@ -95,4 +96,35 @@ df_butterfly <- df2 %>%
   arrange(sex, year, country)
 ```
 
+---
+## Data Analysis
 
+1. Number of butterflies recorded by decades
+<div align = "center">
+<img src = "https://github.com/team-entomophobia/Cabbage-Butterfly/blob/183cecb6dbdd8a994492a931371071aea5d24043/chart_image/line_chart_by_decade.png" width = "700")>
+</div>
+        
+* This measurement data has been recorded over the period of almost 2 centuries since 1821.
+* The last data point was recorded in 2017.
+* The number of recorded fluctuated remarkably between the decades.
+* Most of butterflies in this project were recorded in the 20th century, especially in the 1920s and 1960s.
+* We think this chart is valuable as it raises a question whether the measurement of this species may change over time and whether our outcome may be subject to certain decades.
+
+2. Number of butterflies recorded by Country and Sex
+<div align = "center">
+<img src = "https://github.com/team-entomophobia/Cabbage-Butterfly/blob/183cecb6dbdd8a994492a931371071aea5d24043/chart_image/bar_chart_by_sex_country.png" width = "600")>
+</div>
+
+- The butterflies were measured in 2 continents: Europe and America. In Europe, scientists collected samples in the United Kingdom and Republic of Ireland, while Canada and the United States were their choice of locality in America.
+- Among these countries, while the United Kingdom has the largest number of records with about 400 records, Canada has the smallest one with about 30 records.
+- As visualized by the chart, the number of records was distributed quite equally for both genders.
+- We think this chart is useful because it can illustrate how variable our dataset is and how good our sample is so that we can have a good hypothesis to test the relationship between the measurement and continents.
+
+3. Wingspan size comparison:
+<div align = "center">
+<img src = "https://github.com/team-entomophobia/Cabbage-Butterfly/blob/15193dad1d0b8e3a7999cb3ec399526256c22a0d/chart_image/wingspan_compare.png" width = "600")>
+</div>
+        
+- These numbers were calculated by using mean values of each measurement.
+- According to the graph, the wingspan size of butterflies from America is bigger than the ones of Europe.
+- This finding is critical because it is a foundation for our hypothesis which is the wingspan of cabbage butterflies may be different in different continent.
