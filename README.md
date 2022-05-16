@@ -97,7 +97,48 @@ df_butterfly <- df2 %>%
 ```
 ---
 ## Data Summary
-        
+
+|Country|Year|Female|Male|
+|---|:-:|--:|--:|
+|Canada|1960s|19|11|
+|Canada|1970s|0|1|
+|Republic of Ireland|1890s|1|5|
+|Republic of Ireland|1900s|0|1|
+|Republic of Ireland|1910s|27|15|
+|Republic of Ireland|1920s|16|13
+|Republic of Ireland|1930s|7|0|
+|Republic of Ireland|1970s|2|0|
+|United Kingdom|1820s|1|1|
+|United Kingdom|1840s|6|3|
+|United Kingdom|1870s|3|2|
+|United Kingdom|1880s|16|8|
+|United Kingdom|1890s|28|19|
+|United Kingdom|1900s|16|13|
+|United Kingdom|1910s|27|33|
+|United Kingdom|1920s|49|37|
+|United Kingdom|1930s|28|19|
+|United Kingdom|1940s|19|6|
+|United Kingdom|1950s|12|5|
+|United Kingdom|
+|United Kingdom|
+|United Kingdom|
+|United Kingdom|
+|United Kingdom|
+|United Kingdom|
+|United Kingdom|
+|United States|
+|United States|
+|United States|
+|United States|
+|United States|
+|United States|
+|United States|
+|United States|
+|United States|
+|United States|
+|United States|
+|United States|
+
 ---
 ## Data Analysis
 
