@@ -22,7 +22,7 @@ The columns that were used are
 9. left-wing/right-wing anterior spot: how far the spot in the top wing area is from the vein of the wing. 
 
 ---
-## Data cleaning
+## Data Cleaning
 1. Gender:
 - Existing values: Male, Female, F, M, F?, M?, Unknown
 - Updated the sex column to reflect male or female. Some data was portrayed as F? or M? so we made a code to just have it formatted to be male or female. If the sex was blank then we made the data say unknown instead.
@@ -95,7 +95,9 @@ We sorted the data by sex then country then year.
 df_butterfly <- df2 %>%
   arrange(sex, year, country)
 ```
-
+---
+## Data Summary
+        
 ---
 ## Data Analysis
 
