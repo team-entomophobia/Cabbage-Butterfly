@@ -18,7 +18,7 @@ The columns that were used are
 5. left-wing/right-wing width: the width of the wings in millimeters.
 6. left-wing/right-wing length: the length of the wings in millimeters.
 7. left-wing/right-wing apex: the measurement from the tip of the wing to the bottom of the wing in millimeters.
-8. left-wing/right-wing posterior spot: the measurement of how far the spot in the bottom wing is from the vein of the wing.
+8. left-wing/right-wing posterior spot: how far the spot in the bottom wing is from the vein of the wing.
 9. left-wing/right-wing anterior spot: how far the spot in the top wing area is from the vein of the wing. 
 
 ---
