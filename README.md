@@ -213,4 +213,5 @@ write.csv(df_butterfly, "/Users/baodinhgiatran/Desktop/DATA 332/cabbage_butterfl
 ---
 
 ## Conclusion
-**There is a relationship between the measurement of wings of cabbage butterflies and continents where they live in.**
+1. There is a relationship between the measurement of wings of cabbage butterflies and continents where they live in.
+2. There is insufficient evidence to find the relationship between the measurement of wings of cabbage butterflies and their gender.
