@@ -1,16 +1,16 @@
 # Cabbage-Butterfly
 
-## Contributors
+## Contributors 🐛:
 Bao Tran, Chloe Fausett, Kiet Vu
 
 ## Introduction
-We will analyze the measurement data of butterflies recorded in different countries to find relationships between the wingspan and location/sex. <br>
+We will analyze the measurement data of butterflies recorded in different countries to find relationships between the wingspan and location/sex 🦋. <br>
 <div align = "center">
 <img src = "https://github.com/team-entomophobia/Cabbage-Butterfly/blob/26a03df000a8b9125e2a1a673f785fd75c282c55/chart_image/Screen%20Shot%202022-05-15%20at%205.53.05%20PM.png" width = "450")>
 </div>
         
-## Dictionary
-The columns that were used are 
+## Dictionary 📖:
+The columns that were used are: 
 1. coreid: a unique ID for each butterfly that was recorded.
 2. sex: whether the butterfly is male or female.
 3. country: where the butterfly is from.
@@ -22,7 +22,7 @@ The columns that were used are
 9. left-wing/right-wing anterior spot: how far the spot in the top wing area is from the vein of the wing. 
 
 ---
-## Data Cleaning
+## Data Cleaning 🧹:
 1. Gender:
 - Existing values: Male, Female, F, M, F?, M?, Unknown
 - Updated the sex column to reflect male or female. Some data was portrayed as F? or M? so we made a code to just have it formatted to be male or female. If the sex was blank then we made the data say unknown instead.
@@ -36,16 +36,16 @@ df$SexUpdated[df$SexUpdated =="male?"] <- "unknown"
 df$SexUpdated[is.na(df$SexUpdated)] <- "unknown"
 ```
 
-2. Location:
+2. Location 🌎:
 - For the country column, we created a code to make all countries formatted the same.
-- For USA there were many different formats, such as U.S.A. and United States, so we formatted it to be United States. 
-- There was a blank, so we looked at the locality and formatted the country to represent the locality. The locality said Great Britain, then we said the country was United Kingdom.
+- For USA there were many different formats, such as U.S.A. and United States, so we formatted it to be United States :us:. 
+- There was a blank, so we looked at the locality and formatted the country to represent the locality. The locality said Great Britain, then we said the country was United Kingdom :uk:.
  ```
 df$`dwc:country`<- gsub("(?i)USA|(?i)U.S.A.", "United States", df$`dwc:country`)
 df$`dwc:country`[is.na(df$`dwc:country`)] <- "United Kingdom"
  ```
  
-3. Year: 
+3. Year 📆: 
 - Converted N/A values in year to reflect the YearUpdated column value.
 - Fix a record with the YearUpdated value is 200 with the value in the year column.
 ```
@@ -53,7 +53,7 @@ df$YearUpdated[is.na(df$YearUpdated)] <- df$`dwc:year`[is.na(df$YearUpdated)]
 df$YearUpdated[df$YearUpdated == 200] <- 2000
 ```
 
-4. Measurement:
+4. Measurement 📏:
 - Measurement = round up to the third decimal. <p>
 - Made a code to format the measurements of the wings to reflect the same decimal points. We used the round function to round the measurements to 3 decimal places. Formated all the measurements to reflect number format instead of text format.
 ```
@@ -95,6 +95,12 @@ We sorted the data by sex then country then year.
 df_butterfly <- df2 %>%
   arrange(sex, year, country)
 ```
+        
+8. Export to CSV file:
+```
+write.csv(df_butterfly, "/Users/baodinhgiatran/Desktop/DATA 332/cabbage_butterfly-main/clean_data.csv", row.names = FALSE)
+```
+        
 ---
 ## Data Summary
 
@@ -192,7 +198,7 @@ df_butterfly <- df2 %>%
 - p-value is much less than alpha = 0.05
 - **There is strong evidence that the wing area of butterflies from Europe is less than that of butterflies of America.**
 
-6. T-test on sex: 
+6. T-test on sex:
 <div align = "center">
 <img src = "https://github.com/team-entomophobia/Cabbage-Butterfly/blob/511a8fe754cd5dff729961c84f063843640cf121/chart_image/LWL.png" width = "500")>
 <img src = "https://github.com/team-entomophobia/Cabbage-Butterfly/blob/511a8fe754cd5dff729961c84f063843640cf121/chart_image/RWL.png" width = "500")>
@@ -207,3 +213,4 @@ df_butterfly <- df2 %>%
 ---
 
 ## Conclusion
+**There is a relationship between the measurement of wings of cabbage butterflies and continents where they live in.**
