@@ -1,4 +1,4 @@
-# Cabbage-Butterfly 
+# Cabbage-Butterfly 🦋
 
 ## Contributors 🐛
 Bao Tran, Chloe Fausett, Kiet Vu
