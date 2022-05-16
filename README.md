@@ -9,7 +9,7 @@ We will analyze the measurement data of butterflies recorded in different countr
 <img src = "https://github.com/team-entomophobia/Cabbage-Butterfly/blob/26a03df000a8b9125e2a1a673f785fd75c282c55/chart_image/Screen%20Shot%202022-05-15%20at%205.53.05%20PM.png" width = "450")>
 </div>
         
-## Dictionary:
+## Dictionary
 The columns that were used are 
 1. coreid: a unique ID for each butterfly that was recorded.
 2. sex: whether the butterfly is male or female.
@@ -110,6 +110,8 @@ df_butterfly <- df2 %>%
 |Republic of Ireland|1970s|2|0|
 |United Kingdom|1820s|1|1|
 |United Kingdom|1840s|6|3|
+|United Kingdom|1850s|1|1|
+|United Kingdom|1860s|4|1|
 |United Kingdom|1870s|3|2|
 |United Kingdom|1880s|16|8|
 |United Kingdom|1890s|28|19|
@@ -119,25 +121,23 @@ df_butterfly <- df2 %>%
 |United Kingdom|1930s|28|19|
 |United Kingdom|1940s|19|6|
 |United Kingdom|1950s|12|5|
-|United Kingdom|
-|United Kingdom|
-|United Kingdom|
-|United Kingdom|
-|United Kingdom|
-|United Kingdom|
-|United Kingdom|
-|United States|
-|United States|
-|United States|
-|United States|
-|United States|
-|United States|
-|United States|
-|United States|
-|United States|
-|United States|
-|United States|
-|United States|
+|United Kingdom|1960s|4|5|
+|United Kingdom|1970s|13|9|
+|United Kingdom|1980s|1|3|
+|United Kingdom|1990s|0|1|
+|United Kingdom|2010s|7|0|
+|United States|1860s|0|1|
+|United States|1910s|1|2|
+|United States|1920s|4|1|
+|United States|1930s|1|5|
+|United States|1940s|3|6|
+|United States|1950s|11|7|
+|United States|1960s|51|57|
+|United States|1970s|27|33|
+|United States|1980s|6|9|
+|United States|1990s|3|3|
+|United States|2000s|2|6|
+|United States|2010s|3|11|
 
 ---
 ## Data Analysis
@@ -203,3 +203,7 @@ df_butterfly <- df2 %>%
 - Null hypothesis: the wing area of male butterflies is equal to that of female butterflies.
 - Alternative hypothesis: the wing area of male butterflies is different than that of female butterflies.
 - **There is insufficient evidence to conclude that the wing area of male butterflies is different than that of female butterflies.**
+
+---
+
+## Conclusion
