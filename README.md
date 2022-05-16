@@ -1,6 +1,6 @@
-# Cabbage-Butterfly
+# Cabbage-Butterfly 
 
-## Contributors 🐛:
+## Contributors 🐛
 Bao Tran, Chloe Fausett, Kiet Vu
 
 ## Introduction
@@ -9,7 +9,7 @@ We will analyze the measurement data of butterflies recorded in different countr
 <img src = "https://github.com/team-entomophobia/Cabbage-Butterfly/blob/26a03df000a8b9125e2a1a673f785fd75c282c55/chart_image/Screen%20Shot%202022-05-15%20at%205.53.05%20PM.png" width = "450")>
 </div>
         
-## Dictionary 📖:
+## Dictionary 📖
 The columns that were used are: 
 1. coreid: a unique ID for each butterfly that was recorded.
 2. sex: whether the butterfly is male or female.
@@ -22,7 +22,7 @@ The columns that were used are:
 9. left-wing/right-wing anterior spot: how far the spot in the top wing area is from the vein of the wing. 
 
 ---
-## Data Cleaning 🧹:
+## Data Cleaning 🧹
 1. Gender:
 - Existing values: Male, Female, F, M, F?, M?, Unknown
 - Updated the sex column to reflect male or female. Some data was portrayed as F? or M? so we made a code to just have it formatted to be male or female. If the sex was blank then we made the data say unknown instead.
