@@ -19,3 +19,6 @@ pt <- df %>%
   group_by(country,sex,year) %>%
   summarize(numRecord = n()) %>%
   pivot_wider(names_from = sex, values_from = numRecord) #convert the gender into 2 columns
+
+pt <- pt%>%
+  arrange(country, year)
