@@ -11,14 +11,14 @@ We will analyze the measurement data of butterflies recorded in different countr
         
 ## Dictionary:
 The columns that were used are 
-1. coreid: a unique ID for each butterfly that was recorded
-2. sex: whether the butterfly is male or female 
-3. country: where the butterfly is from
-4. year: when the butterfly was recorded
-5. left-wing/right-wing width: the width of the wings in millimeters
-6. left-wing/right-wing length: the length of the wings in millimeters
-7. left-wing/right-wing apex: the measurement from the tip of the wing to the bottom of the wing in millimeters
-8. left-wing/right-wing posterior spot: the measurement of how far the spot in the bottom wing is from the vein of the wing
+1. coreid: a unique ID for each butterfly that was recorded.
+2. sex: whether the butterfly is male or female.
+3. country: where the butterfly is from.
+4. year: when the butterfly was recorded.
+5. left-wing/right-wing width: the width of the wings in millimeters.
+6. left-wing/right-wing length: the length of the wings in millimeters.
+7. left-wing/right-wing apex: the measurement from the tip of the wing to the bottom of the wing in millimeters.
+8. left-wing/right-wing posterior spot: the measurement of how far the spot in the bottom wing is from the vein of the wing.
 9. left-wing/right-wing anterior spot how far the spot in the top wing area is from the vein of the wing. 
 
 ---
@@ -46,15 +46,15 @@ df$`dwc:country`[is.na(df$`dwc:country`)] <- "United Kingdom"
  ```
  
 3. Year: 
-- Converted N/A values in year to reflect the YearUpdated column value
-- Fix a record with the YearUpdated value is 200 with the value in the year column
+- Converted N/A values in year to reflect the YearUpdated column value.
+- Fix a record with the YearUpdated value is 200 with the value in the year column.
 ```
 df$YearUpdated[is.na(df$YearUpdated)] <- df$`dwc:year`[is.na(df$YearUpdated)]
 df$YearUpdated[df$YearUpdated == 200] <- 2000
 ```
 
 4. Measurement:
-- Measurement = round up to the third decimal <p>
+- Measurement = round up to the third decimal. <p>
 - Made a code to format the measurements of the wings to reflect the same decimal points. We used the round function to round the measurements to 3 decimal places. Formated all the measurements to reflect number format instead of text format.
 ```
 df$LWingLength <- round(as.numeric(df$LWingLength), digits = 3)
@@ -99,7 +99,7 @@ df_butterfly <- df2 %>%
 ---
 ## Data Analysis
 
-1. Number of butterflies recorded by decades
+1. Number of butterflies recorded by decades:
 <div align = "center">
 <img src = "https://github.com/team-entomophobia/Cabbage-Butterfly/blob/183cecb6dbdd8a994492a931371071aea5d24043/chart_image/line_chart_by_decade.png" width = "700")>
 </div>
@@ -110,7 +110,7 @@ df_butterfly <- df2 %>%
 * Most of butterflies in this project were recorded in the 20th century, especially in the 1920s and 1960s.
 * We think this chart is valuable as it raises a question whether the measurement of this species may change over time and whether our outcome may be subject to certain decades.
 
-2. Number of butterflies recorded by Country and Sex
+2. Number of butterflies recorded by Country and Sex:
 <div align = "center">
 <img src = "https://github.com/team-entomophobia/Cabbage-Butterfly/blob/183cecb6dbdd8a994492a931371071aea5d24043/chart_image/bar_chart_by_sex_country.png" width = "600")>
 </div>
@@ -138,13 +138,25 @@ df_butterfly <- df2 %>%
 - In the graph, there is no significant difference between size of each sex.
 - Like the third graph, this graph is a strong base for us to conduct the t test on wingspan size of each gender to find out if the sex of an butterfly affects the length and the width of its wings.
         
-5. t-test:
-<div float = "left">
+5. T-test on continents:
+<div align = "center">
 <img src = "https://github.com/team-entomophobia/Cabbage-Butterfly/blob/9f2e6f6232aa03f2b65288ccf04d4a34d1c76f93/chart_image/ttest1.png" width = "500")>
 <img src = "https://github.com/team-entomophobia/Cabbage-Butterfly/blob/dd3169695c5bea562bf8531bc38f35471795d919/chart_image/ttest2.png" width = "500")>   
 </div>      
 
-- Null hypothesis: the wing area of butterflies from Europe is greater than or equal to that of butterflies of America
-- Alternative hypothesis: the wing area of butterflies from Europe is less than that of butterflies of America
+- Null hypothesis: the wing area of butterflies from Europe is greater than or equal to that of butterflies of America.
+- Alternative hypothesis: the wing area of butterflies from Europe is less than that of butterflies of America.
 - p-value is much less than alpha = 0.05
-- **There is strong evidence that the wing area of butterflies from Europe is less than that of butterflies of America**
+- **There is strong evidence that the wing area of butterflies from Europe is less than that of butterflies of America.**
+
+6. T-test on sex: 
+<div align = "center">
+<img src = "https://github.com/team-entomophobia/Cabbage-Butterfly/blob/511a8fe754cd5dff729961c84f063843640cf121/chart_image/LWL.png" width = "500")>
+<img src = "https://github.com/team-entomophobia/Cabbage-Butterfly/blob/511a8fe754cd5dff729961c84f063843640cf121/chart_image/RWL.png" width = "500")>
+<img src = "https://github.com/team-entomophobia/Cabbage-Butterfly/blob/511a8fe754cd5dff729961c84f063843640cf121/chart_image/LWW.png" width = "500")>
+<img src = "https://github.com/team-entomophobia/Cabbage-Butterfly/blob/511a8fe754cd5dff729961c84f063843640cf121/chart_image/RWW.png" width = "500")> 
+</div>  
+
+- Null hypothesis: the wing area of male butterflies is equal to that of female butterflies.
+- Alternative hypothesis: the wing area of male butterflies is different than that of female butterflies.
+- **There is insufficient evidence to conclude that the wing area of male butterflies is different than that of female butterflies.**
