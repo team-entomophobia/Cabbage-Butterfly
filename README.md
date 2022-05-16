@@ -1,7 +1,7 @@
 # Cabbage-Butterfly 🦋
 
 ## Contributors 🐛
-Bao Tran, Chloe Fausett, Kiet Vu
+Chloe Fausett, Bao Tran, Kiet Vu
 
 ## Introduction
 We will analyze the measurement data of butterflies recorded in different countries to find relationships between the wingspan and location/sex 🦋. <br>
