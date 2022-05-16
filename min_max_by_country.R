@@ -7,8 +7,8 @@ library(ggpubr)
 
 #set up working directory and the raw file
 rm(list = ls())
-setwd("H:/Cabbage-Butterfly")
-df <- read.csv("data/clean_data.csv")
+setwd("/Users/baodinhgiatran/Desktop/DATA 332/cabbage_butterfly-main")
+df <- read.csv("clean_data.csv")
 
 #remove 0 values
 df <- df %>%
@@ -32,7 +32,7 @@ df_longer$country <- factor(df_longer$country,
 #create visualization
 ggplot(df_longer, aes(fill = country, x = functions, y = measurement))+
   geom_bar(position = "dodge", stat = "identity") + theme_minimal()+
-  ggtitle("Wing Span Size by Country") + ylim(0, 30)+
+  ggtitle("Wingspan Size by Country") + ylim(0, 30)+
   labs(x = "", y = "") +
   scale_fill_manual(values = c("#CC3333", "#333399", "#FFCC00", "#FF9933"), 
                     name = "Country")

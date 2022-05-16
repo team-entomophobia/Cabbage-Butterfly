@@ -7,13 +7,16 @@ library(ggpubr)
 
 #set up working directory and the raw file
 rm(list = ls())
-setwd("H:/Cabbage-Butterfly")
-df <- read.csv("data/clean_data.csv")
+setwd("/Users/baodinhgiatran/Desktop/DATA 332/cabbage_butterfly-main")
+df <- read.csv("clean_data.csv")
 
 df <- df %>%
   dplyr::select("coreid", "sex", 
                 "LWingLength", "LWingWidth","RWingLength", "RWingWidth") %>%
   dplyr::filter(LWingLength > 0, LWingWidth > 0, RWingLength > 0, RWingWidth >0)
+
+#remove unknown sex value
+df <-subset(df, sex != "unknown")
 
 #plot left wing length
 df1 <- df %>%

@@ -6,14 +6,19 @@ library(ggplot2)
 
 #set up directory
 rm(list = ls())
-setwd("H:/Cabbage-Butterfly")
-df <- read.csv("data/clean_data.csv")
+setwd("/Users/baodinhgiatran/Desktop/DATA 332/cabbage_butterfly-main")
+df <- read.csv("clean_data.csv")
 
-df1 <- df %>%
+#remove unknown sex value
+df1 <-subset(df, sex != "unknown")
+
+#count number of records by country and sex
+df2 <- df1 %>%
   group_by(sex) %>%
   count(country)
 
-ggplot(df1, aes(fill = sex, y = n, x = country)) +
+#plot a bar chart
+ggplot(df2, aes(fill = sex, y = n, x = country)) +
   geom_bar(position = "stack", stat = "identity") +
   ggtitle("Number of Butterflies recorded by Sex and Country") +
   labs(x = "Countries", y = "Number of Butterflies") +

@@ -27,6 +27,7 @@ df$`dwc:country`[is.na(df$`dwc:country`)] <- "United Kingdom"
 
 #clean year column
 df$YearUpdated[is.na(df$YearUpdated)] <- df$`dwc:year`[is.na(df$YearUpdated)]
+df$YearUpdated[df$YearUpdated == 200] <- 2000
 
 #convert data type
 df$LWingLength <- round(as.numeric(df$LWingLength), digits = 3)
@@ -53,12 +54,13 @@ df1 <- df %>%
                 "RWingLength", "RWingWidth", "RBlackPatchApex","RAnteriorSpotM3", 
                 "RPosteriorSpotCu2","year", "country")
 
-
-df2 <-subset(df1, sex != "unknown" & country != "unknown")
-df2 <- df2 %>%
+#remove rows with NA values
+df2 <- df1 %>%
   drop_na()
 
+#sort by sex, year, and country
 df_butterfly <- df2 %>%
   arrange(sex, year, country)
 
-write.csv(df_butterfly, "/Users/baodinhgiatran/Desktop/DATA 332/cabbage_butterfly-main/testing.csv", row.names = FALSE)
+#export clean file
+write.csv(df_butterfly, "/Users/baodinhgiatran/Desktop/DATA 332/cabbage_butterfly-main/clean_data.csv", row.names = FALSE)
