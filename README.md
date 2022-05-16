@@ -128,3 +128,23 @@ df_butterfly <- df2 %>%
 - These numbers were calculated by using mean values of each measurement.
 - According to the graph, the wingspan size of butterflies from America is bigger than the ones of Europe.
 - This finding is critical because it is a foundation for our hypothesis which is the wingspan of cabbage butterflies may be different in different continent.
+
+4. Wingspan size by sex:
+<div align = "center">
+<img src = "https://github.com/team-entomophobia/Cabbage-Butterfly/blob/db60d4621dbfdbc176af0c1c732d18ce80a8022f/chart_image/wing_span_by_sex.png" width = "700")>
+</div>       
+
+- This graph includes min, median, mean, and max values of each measurement by sex. 
+- In the graph, there is no significant difference between size of each sex.
+- Like the third graph, this graph is a strong base for us to conduct the t test on wingspan size of each gender to find out if the sex of an butterfly affects the length and the width of its wings.
+        
+5. t-test:
+<div float = "left">
+<img src = "https://github.com/team-entomophobia/Cabbage-Butterfly/blob/9f2e6f6232aa03f2b65288ccf04d4a34d1c76f93/chart_image/ttest1.png" width = "500")>
+<img src = "https://github.com/team-entomophobia/Cabbage-Butterfly/blob/dd3169695c5bea562bf8531bc38f35471795d919/chart_image/ttest2.png" width = "500")>   
+</div>      
+
+- Null hypothesis: the wing area of butterflies from Europe is greater than or equal to that of butterflies of America
+- Alternative hypothesis: the wing area of butterflies from Europe is less than that of butterflies of America
+- p-value is much less than alpha = 0.05
+- **There is strong evidence that the wing area of butterflies from Europe is less than that of butterflies of America**
